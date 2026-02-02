@@ -1,36 +1,165 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## 📦 Radnyee – Full Stack E-Commerce Platform
 
-First, run the development server:
+A modern, full-stack **multi-store e-commerce platform** with an **admin dashboard (SaaS-style CMS)** and a **customer-facing storefront**, built using the latest Next.js App Router.
+
+This project is inspired by a real-world production architecture and focuses on scalability, clean UI, and maintainability.
+
+---
+
+## ✨ Features
+
+### 🧠 Admin Dashboard
+
+* Multi-store support (one admin → many stores)
+* Store creation via modal
+* Product management (CRUD)
+* Categories, sizes & colors (filters)
+* Billboards / hero banners
+* Featured & archived products
+* Order management
+* Revenue & sales overview
+* Dark mode support
+* Secure authentication (Clerk)
+
+### 🛍️ Storefront
+
+* Product listing synced from dashboard
+* Category-based navigation
+* Filters (size, color)
+* Product gallery & quick preview
+* Cart with persistence
+* Stripe checkout
+* Automatic product archiving after purchase
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend & Backend**
+
+* Next.js (App Router)
+* TypeScript
+* Tailwind CSS
+* shadcn/ui (Radix UI)
+
+**State & Forms**
+
+* Zustand (global state)
+* React Hook Form
+* Zod (schema validation)
+
+**Auth & Payments**
+
+* Clerk Authentication
+* Stripe
+
+**Database**
+
+* Prisma ORM
+* PlanetScale (MySQL)
+
+---
+
+## 📂 Project Structure
+
+```
+.
+├── app/
+│   ├── (auth)/        # Sign in / Sign up
+│   ├── (root)/        # Setup / root logic
+│   ├── (dashboard)/  # Admin dashboard
+│   └── layout.tsx
+├── components/
+│   ├── ui/            # shadcn components
+│   └── modals/
+├── hooks/
+├── lib/
+├── providers/
+├── prisma/
+└── public/
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/your-username/radnyee.git
+cd radnyee
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Environment variables
+
+Create a `.env` file:
+
+```env
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+# Database
+DATABASE_URL=
+
+# Stripe
+STRIPE_API_KEY=
+STRIPE_WEBHOOK_SECRET=
+```
+
+### 4️⃣ Run the app
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit:
+👉 `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Authentication
 
-## Learn More
+* Uses **Clerk**
+* App Router–compatible setup
+* Protected dashboard routes
+* Ready for MFA and multi-account support
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧩 Status
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🚧 **In active development**
 
-## Deploy on Vercel
+Current focus:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Store creation flow
+* Prisma schema & database connection
+* Dashboard CRUD features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📌 Notes
+
+* Architecture is intentionally SaaS-ready and reusable beyond e-commerce.
+
+---
+
+## 👤 Author
+
+**Aryan Shinde**
+Full Stack Developer
+📍 Pune, India
+
